@@ -30,7 +30,6 @@ function createTask(task, id) {
   const elementText = element.querySelector("span");
   elementItem.id = id;
   elementText.textContent = task;
-  console.log(elementItem);
   const elementDelete = element.querySelector(".delete-task");
   elementDelete.addEventListener("click", (e) => {
     handleCkickRemove(e);
