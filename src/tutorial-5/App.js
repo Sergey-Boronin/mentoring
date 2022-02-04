@@ -51,7 +51,8 @@ const App = () => {
   return (
     <div className={styles.page}>
       <Paper elevation={5} className={styles.container}>
-        <Typography component="ul">
+      <Typography mb={3} variant='h5'>Отзывы:</Typography>
+        <Typography component="ul"> 
           {comments.map((item) => (
             <Comment name={item.name} description={item.description} date={item.createdAt} />
           ))}

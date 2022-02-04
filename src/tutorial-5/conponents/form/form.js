@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 const Form = ({ onSubmit, handleEmailChange, handleNameChange, handleTextChange, name, email, description }) => {
   return(
       <>
-        <Typography variant="h5" component='p' mb={2}>Отзывы:</Typography>
+        <Typography style={{fontWeight: 'bold'}} variant="h5" component='p' mb={2}>Обратная связь:</Typography>
         <form onSubmit={onSubmit} className={styles.form}>
           <TextField onChange={handleNameChange} value={name} label="Имя"></TextField>
           <TextField onChange={handleEmailChange} value={email} label='Почта'></TextField>

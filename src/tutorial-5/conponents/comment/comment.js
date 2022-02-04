@@ -2,7 +2,7 @@ import { Typography, Avatar } from "@mui/material";
 import styles from "./styles.module.css";
 
 
-const Comment = ({ name, description, date, handleDelete }) => {
+const Comment = ({ name, description, date }) => {
   return (
     <li className={styles.comment}>
       <Avatar sx={{ width: 56, height: 56 }} alt="yorke" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Thom_Yorke_2013.jpg" />
