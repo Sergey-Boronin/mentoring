@@ -3,9 +3,11 @@ export default function App() {
   let password = "";
 
   const handleChange = (e) => {
+    
     e.target.type === "text"
       ? email = e.target.value
       : password = e.target.value;
+      console.log(email);
   }
 
   const handleSubmit = (e) => {

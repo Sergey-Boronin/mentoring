@@ -1,0 +1,33 @@
+.comment {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  max-height: 50px;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.commentContent {
+  width: 70%;
+}
+
+.commentName, .commentMessage{
+  overflow-wrap: break-word;
+}
+
+.commentDate {
+  position: absolute;
+  right: -7px;
+  bottom: -2px;
+  font-size: 8px;
+  max-width: 20px;
+}
+
+.commentDelete {
+  position: relative;
+  right: -37px;
+  top: -13px;
+  cursor: pointer;
+}
