@@ -1,15 +1,29 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import posts from '../posts.json';
 
 function FullArticle() {
-  let {id} = useParams()
+  const { id } = useParams()
   
-  const post = posts.find(obj => obj.id === Number(id))
-  console.log(post)
+  const post = posts.find(obj => obj.id === Number(id));
+  const navigate = useNavigate();
 
+  React.useEffect(() => {
+  setTimeout(() => {
+    navigate("/", {replace: true})
+  }, 3000)
+ }, [])
+
+  if(!post) {
+    return (
+    <>
+      <h1>Статья не найдена</h1>
+      <p>Сейчас вернемся на главную</p>
+    </>
+    )
+  }
+  
   return (
     <div className='full-article'>
       <h2>{post.title}</h2>

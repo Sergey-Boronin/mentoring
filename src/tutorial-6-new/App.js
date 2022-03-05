@@ -7,25 +7,9 @@ import About from "./pages/About";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FullArticle from "./pages/FullArticle";
+import NotFound from "./pages/NotFound";
 
-import { Route, Link, Routes } from 'react-router-dom'
-
-// function Route({ path, element, strict}) {
-//   const pathname = window.location.pathname;
-  
-//   if(strict) {
-//     if(path === pathname) {
-//       return element
-//     }
-//   } else {
-//     if(pathname.includes(path)) {
-//       return element
-//     }
-//   }
-
-
-//   return null;
-// }
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
@@ -36,6 +20,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<h2>login</h2>} />
         <Route path='/post/:id' element={<FullArticle />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
 
       <main>
