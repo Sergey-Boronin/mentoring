@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.login-form {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.page {
+  padding: 30px;
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  background-color: #ccc;
+}
+
+main {
+  flex: 1;
+}
+
+.card {
+  height: 416px;
+  overflow-y: clip;
+}
+
+footer {
+  margin-top: 54px;
+  background-color: #ccc;
+}
