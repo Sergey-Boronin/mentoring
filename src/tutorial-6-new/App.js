@@ -1,35 +1,31 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css";
+import "../index.css";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Login from "./pages/Login"
 import FullArticle from "./pages/FullArticle";
 import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
 
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Layout from "./components/Layout";
 
 function App() {
   return (
     <div className="page">
-      <Header />
       <Routes>
-        <Route path='/' element={<Home />}> </Route>
-        <Route path='/about' element={<About />} />
-        <Route path='/login' element={<h2>login</h2>} />
-        <Route path='/post/:id' element={<FullArticle />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='/' element={<Layout />}> 
+          <Route path='/' element={<Home />}> </Route>
+          <Route path='/about' element={<About />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/post/:id' element={<FullArticle />} />
+          <Route path='/404' element={<NotFound />} />
+          <Route path='*' element={<Navigate to='/404' />} />
+        </Route>
       </Routes>
-
-      <main>
-        {/* {path === "/home" && <Home />}
-        {path === "/about" && <About />}
-        {path === "/login" && <h2>login</h2>}
-        {postId && <FullArticle id={postId}/>} */}
-      </main>
-      <Footer />
     </div>
   );
 }
