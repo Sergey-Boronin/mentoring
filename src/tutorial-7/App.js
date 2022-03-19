@@ -1,38 +1,27 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { useForm } from "react-hook-form";
+import { PersonalInfoForm } from "./forms/PersonalInfoForm";
+import { AddressForm } from "./forms/AddressForm";
+import { Routes, Route } from "react-router-dom"
+import Result from "./forms/Result";
 
 import "./styles.css";
 
-export default function Form() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = useForm();
-  const onSubmit = (data, e) => {};
+function App() {
 
-  console.log(errors);
+  const [formData, setFormData ] = React.useState({})
+
+  console.log(formData)
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Имя</label>
-      <input type="text" {...register("firstName", { required: true })} />
-      {errors.firstName && <p>This is required</p>}
-
-      <label>Фамилия</label>
-      <input type="text" {...register("lastName")} />
-
-      <input type="submit" />
-      <input
-        style={{ display: "block", marginTop: 20 }}
-        type="reset"
-        value="Очистить"
-      />
-
-    </form>
+      <div className="App">
+          <Routes> 
+            <Route path="/" exact element={<PersonalInfoForm setFormData={setFormData} />} />
+            <Route path="/address" element={<AddressForm setFormData={setFormData} />} />
+            <Route path="/result" element={<Result formData={formData} />}  />
+          </Routes>
+        </div>
+      
   );
 }
 
-
+export default App;
